@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<script>
+
+    /*1. Игра в загадки.
+        a. Загадать загадку. Если ответ верен – поздравить пользователя.
+            Затем сообщить, что игра окончена.
+        b. Если ответ неверный – написать пользователю, что он не угадал.
+        c. Добавить еще 3 загадки. Подсчитать количество правильных ответов,
+            сообщить пользователю.
+        d. (По желанию). В качестве верного ответа принимать несколько вариантов ответов.
+            Например, «Стул», «стул», «табуретка» и так далее.*/
+
+    var question_1 = "Загадка №1:\n Электронная машина,\n Знает все о целом мире,\n Все ответы на вопросы очень быстро может дать.\n Помогает всегда людям,\n Называется ...";
+    var question_2 = "Загадка №2:\n На ней кнопок очень много:\n Алфавит и цифры есть.\n Чтобы слово написать,\n Нужно кнопки нажимать";
+    var question_3 = "Загадка №3:\n Печатаю буквы, рисую цветочки,\n И фото для вас напечатаю срочно.\n Стою на столе я в конторе и дома.\n Ну, что догадались? Со мной вы знакомы?";
+    var question_4 = "Загадка №4:\n На столе он перед нами,\n на него направлен взор,\n подчиняется программе,\n носит имя…";
+    var rightMessage = "Ответ верный. Правильных ответов: ";
+    var wrongMessage = "Ответ неверный. Правильных ответов: ";
+    var rightAnswer = 0;
+
+    var userAnswer_1 = prompt(question_1);
+    userAnswer_1 = userAnswer_1.toLowerCase();
+    if (userAnswer_1 == "компьютер" || userAnswer_1 == "комп") {
+        rightAnswer += 1;
+        alert(rightMessage + rightAnswer);
+    } else {
+        alert(wrongMessage + rightAnswer);
+    }
+
+    var userAnswer_2 = prompt(question_2);
+    userAnswer_2 = userAnswer_2.toLowerCase();
+    if (userAnswer_2 == "клавиатура" || userAnswer_2 == "клава") {
+        rightAnswer += 1;
+        alert(rightMessage + rightAnswer);
+    } else {
+        alert(wrongMessage + rightAnswer);
+    }
+
+    var userAnswer_3 = prompt(question_3);
+    userAnswer_3 = userAnswer_3.toLowerCase();
+    if (userAnswer_3 == "принтер") {
+        rightAnswer += 1;
+        alert(rightMessage + rightAnswer);
+    } else {
+        alert(wrongMessage + rightAnswer);
+    }
+
+    var userAnswer_4 = prompt(question_4);
+    userAnswer_4 = userAnswer_4.toLowerCase();
+    if (userAnswer_4 == "Монитор" || userAnswer_4 == "моник") {
+        rightAnswer += 1;
+        alert(rightMessage + rightAnswer);
+    } else {
+        alert(wrongMessage + rightAnswer);
+    }
+
+    document.write("Игра завершена. Правильных ответов: " + rightAnswer)
+
+</script>

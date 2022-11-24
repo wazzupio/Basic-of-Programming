@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<script>
+
+    var english = ["food", "bike", "apple", "do", "mean"];
+    var russian = ["еда", "велосипед", "яблоко", "делать", "иметь в виду"];
+
+    function askForWords(words) {
+
+        while (words.length != 0) {
+            var randomNumber = parseInt(Math.random() * words.length);
+            var userTranslate = prompt("Как переводится слово: " + words[randomNumber][0] + "?");
+            if (userTranslate == words[randomNumber][1]) {
+                alert("Правильно!");
+                words.splice(randomNumber, 1);
+            } else {
+                alert("Правильный ответ: " + words[randomNumber][1]);
+            }
+        }
+    }
+
+    var easyWords = [
+        ["food", "еда"],
+        ["bike", "велосипед"],
+        ["apple", "яблоко"],
+        ["do", "делать"],
+        ["mean", "иметь в виду"],
+    ];
+
+    askForWords(easyWords);
+
+    alert("Поздравляю! Все слова переведены!\nПереходим на следующий уровень");
+
+    var hardWords = [
+        ["chainsaw", "бензопила"],
+        ["squirrel", "белка"],
+        ["castle", "замок"],
+        ["homeland", "родина"],
+        ["sewerage", "канализация"],
+        ["bottom", "дно"],
+    ];
+
+    askForWords(hardWords);
+
+    alert("Поздравляю! Все слова переведены!");
+
+</script>

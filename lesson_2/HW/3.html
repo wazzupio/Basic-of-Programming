@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+<script>
+
+    /*3. Дописать игру “Угадай число” (по желанию).
+        Сделать игру с двумя игроками и бесконечным числом попыток.
+        Сделайте возможность выйти из игры по желанию одного из игроков.*/
+
+    let answer = parseInt(Math.random() * 100);
+    let player_1 = "Игрок №1";
+    let player_2 = "Игрок №2";
+    let player = player_1;
+    let exit = "стоп";
+
+    alert("Игра угадайка для двух игроков.\nДля выхода из игры напишите СТОП.");
+
+    while (true) {
+        let userAnswer = prompt(player + ".\nУгадайте число от 1 до 100.");
+        userAnswer = userAnswer.toLowerCase();
+
+        if (userAnswer == exit) {
+            alert(player + " решил выйти из игры.\nИгра окончена.");
+            break;
+        }
+
+        userAnswer = parseInt(userAnswer);
+
+        if (userAnswer == answer) {
+            alert("Поздравляю, вы угадали!\nПравильный ответ: " + answer + "\nПобедил: " + player);
+            break;
+        } else if (userAnswer > answer) {
+            alert("Вы ввели слишком большое число.");
+        } else if (userAnswer < answer) {
+            alert("Вы ввели слишком маленькое число.");
+        }
+
+        if (player == player_1) {
+            player = player_2;
+        } else {
+            player = player_1;
+        }
+    }
+
+</script>

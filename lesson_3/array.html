@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<script>
+
+
+    function compareAnswers(userAnswer, answer) {
+        if (userAnswer == numbers[0]) {
+            alert("Все верно!");
+        } else {
+            alert("А вот и нет. Правильный ответ: " + numbers[0]);
+        }
+    }
+
+
+    function getRandomNumber(max) {
+        return rand = Math.round(Math.random() * max);
+    }
+
+
+    function generateRandomNumberArray(length) {
+        var arr = [];
+
+        for (var i = 0; i < length; i++) {
+            var randomNumber = getRandomNumber(100);
+            arr.push(randomNumber);
+        }
+
+        return arr;
+    }
+
+
+    var numbers = generateRandomNumberArray(5);
+    var n = getRandomNumber(numbers.length);
+
+    alert("Запомните числа и их порядок:\n" + numbers);
+
+    var userAnswer = +prompt("Каким было первое число?");
+    compareAnswers(userAnswer, numbers[0]);
+
+    userAnswer = +prompt("А последнее?");
+    compareAnswers(userAnswer, numbers[numbers.length - 1]);
+
+    userAnswer = +prompt("А как на счет числа под номером: " + (n + 1) + "?");
+    compareAnswers(userAnswer, numbers[n]);
+
+</script>
